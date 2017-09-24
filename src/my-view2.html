@@ -10,54 +10,72 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
-<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../bower_components/iron-image/iron-image.html">
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 
 <dom-module id="my-view2">
   <template>
-    <style include="shared-styles">
-      :host {
-        display: block;
-        padding: 10px;
-        width: 8000px;
-      }
-
-      .user-image {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 200;
-      background: url('https://pbs.twimg.com/media/DG_Z58PXgAAWOt5.jpg');
-      background-size: cover;
+  <style>
+    :host {
+      display: inline-block;
+      width: 400px;
+      padding: 16px;
     }
 
-    .user-header { @apply --paper-font-headline; }
-    .user-name { color: var(--paper-grey-600); margin: 10px 0; }
-    paper-icon-button.rate-icon {
-      --iron-icon-fill-color: white;
-      --iron-icon-stroke-color: var(--paper-grey-600);
+    .cafe-header { @apply --paper-font-headline; }
+    .cafe-light { color: var(--paper-grey-600); }
+    .cafe-location {
+      float: right;
+      font-size: 15px;
+      vertical-align: middle;
     }
+    .cafe-reserve { color: var(--google-blue-500); }
+    iron-icon.star {
+      --iron-icon-width: 16px;
+      --iron-icon-height: 16px;
+      color: var(--paper-amber-500);
+    }
+    iron-icon.star:last-of-type { color: var(--paper-grey-500); }
+  </style>
 
-    </style>
-
-    <div class="card">
-      <div class="card-content">
-        <div class="user-header">Rate this album</div>
-        <div class="user-name">Mac Miller</div>
-        <div>Live from space</div>
+  <paper-card image='https://pbs.twimg.com/media/DG_Z58PXgAAWOt5.jpg'>
+    <div class="card-content">
+      <div class="cafe-header">Cafe Basilico
+        <div class="cafe-location cafe-light">
+          <iron-icon icon="communication:location-on"></iron-icon>
+          <span>250ft</span>
+        </div>
       </div>
-      <div class="card-actions">
-        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
-        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
-        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
-        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
-        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+      <div class="cafe-rating">
+        <iron-icon class="star" icon="star"></iron-icon>
+        <iron-icon class="star" icon="star"></iron-icon>
+        <iron-icon class="star" icon="star"></iron-icon>
+        <iron-icon class="star" icon="star"></iron-icon>
+        <iron-icon class="star" icon="star"></iron-icon>
       </div>
-      <div class="user-image"></div>
+      <p>$・Italian, Cafe</p>
+      <p class="cafe-light">Small plates, salads &amp; sandwiches in an intimate setting with 12 indoor seats plus patio seating.</p>
     </div>
+    <div class="card-actions">
+      <p>Tonight's availability</p>
+      <div class="horizontal justified">
+        <paper-icon-button icon="icons:event"></paper-icon-button>
+        <paper-button>5:30PM</paper-button>
+        <paper-button>7:30PM</paper-button>
+        <paper-button>9:00PM</paper-button>
+      </div>
+      <paper-button class="cafe-reserve">Reserve</paper-button>
+    </div>
+  </paper-card>
+
   </template>
 
   <script>
