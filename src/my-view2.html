@@ -28,18 +28,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: inline-block;
-      width: 400px;
+      width: 600px;
       padding: 16px;
     }
 
-    .cafe-header { @apply --paper-font-headline; }
-    .cafe-light { color: var(--paper-grey-600); }
-    .cafe-location {
+    .user-header { @apply --paper-font-headline; }
+    .user-light { color: var(--paper-grey-600); }
+    .user-location {
       float: right;
       font-size: 15px;
       vertical-align: middle;
     }
-    .cafe-reserve { color: var(--google-blue-500); }
+    .user-reserve { color: var(--google-blue-500); }
     iron-icon.star {
       --iron-icon-width: 16px;
       --iron-icon-height: 16px;
@@ -50,13 +50,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <paper-card image='https://pbs.twimg.com/media/DG_Z58PXgAAWOt5.jpg'>
     <div class="card-content">
-      <div class="cafe-header">Natalia Dibbern
-        <div class="cafe-location cafe-light">
+      <div class="user-header">Natalia Dibbern
+        <div class="user-location user-light">
           <iron-icon icon="maps:place"></iron-icon>
           <span>Venice Beach</span>
         </div>
       </div>
-      <div class="cafe-rating">
+      <div class="user-rating">
         <iron-icon class="star" icon="star"></iron-icon>
         <iron-icon class="star" icon="star"></iron-icon>
         <iron-icon class="star" icon="star"></iron-icon>
@@ -64,7 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <iron-icon class="star" icon="star"></iron-icon>
       </div>
       <p>Student at Loyola Marymount</p>
-      <p class="cafe-light">Natalia likes to sing and play board games, she also enjoys reading a good novel. Her favorite sport is poker. She will do anything for that last can of soda</p>
+      <p class="user-light">Natalia likes to sing and play board games, she also enjoys reading a good novel. Her favorite sport is poker. She will do anything at her reach for that last can of soda</p>
     </div>
     <div class="card-actions">
       <p>This week's availability</p>
@@ -74,7 +74,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-button>Friday</paper-button>
         <paper-button>Saturday</paper-button>
       </div>
-      <paper-button class="cafe-reserve">Reserve</paper-button>
+      <paper-button class="user-reserve">Reserve</paper-button>
     </div>
   </paper-card>
 
