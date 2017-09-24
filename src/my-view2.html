@@ -10,21 +10,53 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-styles/paper-styles.html">
 
 <dom-module id="my-view2">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
+        width: 8000px;
       }
+
+      .user-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 200;
+      background: url('https://pbs.twimg.com/media/DG_Z58PXgAAWOt5.jpg');
+      background-size: cover;
+    }
+
+    .user-header { @apply --paper-font-headline; }
+    .user-name { color: var(--paper-grey-600); margin: 10px 0; }
+    paper-icon-button.rate-icon {
+      --iron-icon-fill-color: white;
+      --iron-icon-stroke-color: var(--paper-grey-600);
+    }
+
     </style>
 
     <div class="card">
-      <div class="circle">2</div>
-      <h1>Search for user</h1>
-      <p>Here is where you would see the profile of the nannies or mothers that satisfy a specific constraint.</p>
+      <div class="card-content">
+        <div class="user-header">Rate this album</div>
+        <div class="user-name">Mac Miller</div>
+        <div>Live from space</div>
+      </div>
+      <div class="card-actions">
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+      </div>
+      <div class="user-image"></div>
     </div>
   </template>
 
