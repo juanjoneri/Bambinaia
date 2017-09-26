@@ -8,6 +8,9 @@ So far the website will have the required functionlity for adding new users to t
 
 Database and userbase mantainance, as well as hosting will be handleled using firebase.
 
+###Available live at
+https://polymer-project3.firebaseapp.com/
+
 #### Add User  view
 
 #### ![adduser](https://github.com/juanjoneri/LMU-CMSI486-Fall17/blob/master/screens/adduser.png)
