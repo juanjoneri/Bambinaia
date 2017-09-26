@@ -13,3 +13,4 @@ So far the website will have the required functionlity for adding new users to t
 ### Retreive User view
 
 ![retreiveuser](https://github.com/juanjoneri/LMU-CMSI486-Fall17/blob/master/screens/usercard.png)
+
