@@ -1,9 +1,6 @@
 # Preliminary Database Design
 
 ## Description
-- Database engine used
-- Potential Users
-
 Some months ago, Juan and I were watching an episode of the famous TV show "Friends", where Rachel and Ross where trying to find a nanny who could take care of their baby while they where at work. The scene represented them making interviews with different nannys and having a hard time finding the perfect one for their child. In that moment Juan and I had the idea of how that task could have been much easier for them if they had an app that could find the perfect nannny for them and save them that time.
 
 This is how the idea of Bambinaia started. Our aim is to develop a website for matching mothers with nannies. The website will be created using Polymer 2.0, a JavaScript library that helps you create custom reusable HTML elements, and use them to build performant, maintainable apps.
@@ -25,7 +22,7 @@ Data provided to the user (>=5)
 Table(s) descriptions and columns
 
 ## ERD
-Entity-Relationship Diagram of the Database 
+The following picture represnets our Entity-Relationship Diagram for Bambinaia's database:
 
 
 
