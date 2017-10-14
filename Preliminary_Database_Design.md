@@ -18,7 +18,12 @@ Parent information will
 ## Examples of Database
 Data provided to the user (>=5)
 
+![usercard](./screens/usercard.png)
+
+
+
 ## Schema
+
 Table(s) descriptions and columns
 
 ## ERD
