@@ -27,15 +27,26 @@
     <div class="card">
       <h1>Register new account</h1>
 
-      <h4>Gender</h4>
-      <paper-radio-group aria-labelledby="label1">
-        <paper-radio-button name="a">Female</paper-radio-button>
-        <paper-radio-button name="b">Male</paper-radio-button>
-        <paper-radio-button name="b">Other</paper-radio-button>
-      </paper-radio-group>
-
+      <h3>Name</h3>
       <paper-input label="First Name"></paper-input>
       <paper-input label="Last Name"></paper-input>
+
+      <h3>Gender</h3>
+      <paper-radio-group aria-labelledby="label1">
+          <paper-radio-button gender="a">Female</paper-radio-button>
+          <paper-radio-button gender="b">Male</paper-radio-button>
+          <paper-radio-button gender="c">Other</paper-radio-button>
+      </paper-radio-group>
+
+      <h3>Contact Information</h3>
+      <paper-input label="Phone Number"></paper-input>
+      <paper-input label="Email"></paper-input>
+
+      <h3>Address</h3>
+      <paper-input label="Street"></paper-input>
+      <paper-input label="City"></paper-input>
+      <paper-input label="Zip code"></paper-input>
+
 
       <paper-radio-button class="red">Accept terms and conditions</paper-radio-button><p>
       <paper-button raised><iron-icon icon="done"></iron-icon>Submit</paper-button>
