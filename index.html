@@ -16,16 +16,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <title>My App</title>
-    <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
-    <script>
-      // Force all polyfills on
-      if (window.customElements) window.customElements.forcePolyfill = true;
-      ShadyDOM = { force: true };
-      ShadyCSS = { shimcssproperties: true};
-    </script>
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.js">
-
-
     <meta name="description" content="My App description">
 
     <!--
@@ -94,6 +84,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </script>
 
+    <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+    <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
     <!-- Load your application shell -->
     <link rel="import" href="src/my-app.html">
