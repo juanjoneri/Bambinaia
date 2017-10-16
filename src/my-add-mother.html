@@ -4,15 +4,20 @@
 <link rel="import" href="../bower_components/paper-radio-button/paper-radio-button.html">
 <link rel="import" href="../bower_components/paper-radio-group/paper-radio-group.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+
+
 
 <dom-module id="my-add-mother">
     <template>
       <style include="shared-styles">
         :host {
           display: block;
-          width: 600px;
-          padding: 10px;
+          width: 400px;
+          padding: 16px;
         }
 
         paper-radio-button.red {
@@ -24,27 +29,38 @@
 
       </style>
 
+
+
       <div class="card">
-        <h1>Register new account</h1>
 
-        <paper-radio-group aria-labelledby="label1">
-          <paper-radio-button name="a">Mother</paper-radio-button>
-          <paper-radio-button name="b">Nanny</paper-radio-button>
-        </paper-radio-group>
+          <form is="iron-form" id="form" method="post">
 
-        <paper-input label="First Name"></paper-input>
-        <paper-input label="Last Name"></paper-input>
+              <h1>Register new account</h1>
 
-        <paper-radio-button class="red">Accept terms and conditions</paper-radio-button><p>
-        <paper-button raised><iron-icon icon="done"></iron-icon>Submit</paper-button>
+              <paper-radio-group aria-labelledby="label1">
+                <paper-radio-button name="a">Mother</paper-radio-button>
+                <paper-radio-button name="b">Nanny</paper-radio-button>
+              </paper-radio-group>
+
+              <paper-input name="firstName" label="First Name" id="firstName"></paper-input>
+              <paper-input id="lastName" label="Last Name"></paper-input>
+
+              <paper-radio-button class="red">Accept terms and conditions</paper-radio-button><p>
+              <paper-button raised on-click="submitForm"><iron-icon icon="done"></iron-icon>Submit</paper-button>
+
+
+          </form>
+
       </div>
     </template>
-  <script>
-    // Your new element extends the Polymer.Element base class
-    class AddMother extends Polymer.Element {
-      static get is() { return 'my-add-mother'; }
-    }
-    //Now, register your new custom element so the browser can use it
-    customElements.define(AddMother.is, AddMother);
-  </script>
+
+    <script type="text/javascript">
+          Polymer({
+              is: "my-add-mother",
+              submitForm: function() {
+                  console.log(this.$.firstName.value);
+              }
+          })
+      </script>
+
 </dom-module>
