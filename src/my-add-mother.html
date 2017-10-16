@@ -20,6 +20,7 @@
           padding: 16px;
         }
 
+        /* Make the radio button be red when not accepted */
         paper-radio-button.red {
         --paper-radio-button-checked-color: var(--paper-green-500);
         --paper-radio-button-checked-ink-color: var(--paper-green-500);
@@ -37,15 +38,16 @@
 
               <h1>Register new account</h1>
 
-              <paper-radio-group aria-labelledby="label1">
-                <paper-radio-button name="a">Mother</paper-radio-button>
-                <paper-radio-button name="b">Nanny</paper-radio-button>
+              <paper-radio-group selected="{{radioSelected}}" aria-labelledby="sex" name="sex">
+                <paper-radio-button name="M">Male</paper-radio-button>
+                <paper-radio-button name="F">Female</paper-radio-button>
+                <paper-radio-button name="O">Other</paper-radio-button>
               </paper-radio-group>
 
-              <paper-input name="firstName" label="First Name" id="firstName"></paper-input>
-              <paper-input name="lastName" label="Last Name" id="lastName"></paper-input>
+              <paper-input value="{{firstName}}" name="firstName" label="First Name"></paper-input>
+              <paper-input value="{{lastName}}" name="lastName" label="Last Name"></paper-input>
 
-              <paper-radio-button class="red">Accept terms and conditions</paper-radio-button><p>
+              <paper-radio-button unchecked value="{{acceptedTerms}}" class="red">Accept terms and conditions</paper-radio-button><p>
               <paper-button raised on-click="submitForm"><iron-icon icon="done"></iron-icon>Submit</paper-button>
 
 
@@ -59,10 +61,13 @@
               is: "my-add-mother",
               submitForm: function() {
                   let newUser = {
-                      firstName: this.$.firstName.value,
-                      lastName: this.$.lastName.value
+                      firstName: this.firstName,
+                      lastName: this.lastName,
+                      sex: this.radioSelected
                   }
-                  console.log(newUser);
+                  if (this.acceptedTerms == 'on') {
+                      console.log(newUser);
+                  }
               }
           })
       </script>
