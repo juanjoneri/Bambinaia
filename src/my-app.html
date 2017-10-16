@@ -22,7 +22,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="my-icons.html">
 
-<link rel="lazy-import" href="my-view1.html">
+<link rel="lazy-import" href="my-add-nanny.html">
+<link rel="lazy-import" href="my-add-mother.html">
 <link rel="lazy-import" href="my-view2.html">
 <link rel="lazy-import" href="my-view404.html">
 
@@ -79,7 +80,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
         <app-toolbar>Menu</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="[[rootPath]]view1">Add Nanny</a>
+          <a name="add-nanny" href="[[rootPath]]add-nanny">Add Nanny</a>
           <a name="add-mother" href="[[rootPath]]add-mother">Add Mother</a>
           <a name="view2" href="[[rootPath]]view2">Search</a>
         </iron-selector>
@@ -100,7 +101,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             attr-for-selected="name"
             fallback-selection="view404"
             role="main">
-          <my-view1 name="view1"></my-view1>
+          <my-add-nanny name="add-nanny"></my-add-nanny>
           <my-add-mother name="add-mother"></my-add-mother>
           <my-view2 name="view2"></my-view2>
           <my-view404 name="view404"></my-view404>
@@ -137,7 +138,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _routePageChanged(page) {
         // If no page was found in the route data, page will be an empty string.
         // Deault to 'view1' in that case.
-        this.page = page || 'view1';
+        this.page = page || 'add-nanny';
 
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
