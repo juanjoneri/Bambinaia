@@ -1,11 +1,11 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/my-app.html",
+  "shell": "src/bambinaia-app.html",
   "fragments": [
-    "src/my-add-nanny.html",
-    "src/my-add-mother.html",
-    "src/my-view2.html",
-    "src/my-view404.html"
+    "src/bambinaia-add-nanny.html",
+    "src/bambinaia-add-mother.html",
+    "src/bambinaia-view2.html",
+    "src/bambinaia-view404.html"
   ],
   "sources": [
     "src/**/*",
