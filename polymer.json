@@ -4,7 +4,7 @@
   "fragments": [
     "src/bambinaia-add-nanny.html",
     "src/bambinaia-add-mother.html",
-    "src/bambinaia-view2.html",
+    "src/bambinaia-find-nanny.html",
     "src/bambinaia-view404.html"
   ],
   "sources": [

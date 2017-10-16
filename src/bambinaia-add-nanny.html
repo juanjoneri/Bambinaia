@@ -5,6 +5,7 @@
 <link rel="import" href="../bower_components/paper-radio-group/paper-radio-group.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
 
 <dom-module id="bambinaia-add-nanny">
   <template>
@@ -25,39 +26,60 @@
     </style>
 
     <div class="card">
-      <h1>Register new account</h1>
+      <form is="iron-form" id="form" method="post">
+          <h1>Register new account</h1>
 
-      <h3>Name</h3>
-      <paper-input label="First Name"></paper-input>
-      <paper-input label="Last Name"></paper-input>
+          <h3>Name</h3>
+          <paper-input value="{{firstName}}" label="First Name"></paper-input>
+          <paper-input value="{{lastName}}" label="Last Name"></paper-input>
 
-      <h3>Gender</h3>
-      <paper-radio-group aria-labelledby="label1">
-          <paper-radio-button gender="a">Female</paper-radio-button>
-          <paper-radio-button gender="b">Male</paper-radio-button>
-          <paper-radio-button gender="c">Other</paper-radio-button>
-      </paper-radio-group>
+          <h3>Gender</h3>
+          <paper-radio-group selected="{{radioSelected}}" aria-labelledby="sex" name="sex">
+              <paper-radio-button name="M">Male</paper-radio-button>
+              <paper-radio-button name="F">Female</paper-radio-button>
+              <paper-radio-button checked name="O">Other</paper-radio-button>
+          </paper-radio-group>
 
-      <h3>Contact Information</h3>
-      <paper-input label="Phone Number"></paper-input>
-      <paper-input label="Email"></paper-input>
+          <h3>Contact Information</h3>
+          <paper-input type="number" value="{{phoneNumber}}" label="Phone Number"></paper-input>
+          <paper-input value="{{email}}" label="Email"></paper-input>
 
-      <h3>Address</h3>
-      <paper-input label="Street"></paper-input>
-      <paper-input label="City"></paper-input>
-      <paper-input label="Zip code"></paper-input>
+          <h3>Address</h3>
+          <paper-input value="{{street}}" label="Street"></paper-input>
+          <paper-input value="{{city}}" label="City"></paper-input>
+          <paper-input value="{{zip}}" label="Zip code"></paper-input>
 
 
-      <paper-radio-button class="red">Accept terms and conditions</paper-radio-button><p>
-      <paper-button raised><iron-icon icon="done"></iron-icon>Submit</paper-button>
+          <paper-radio-button unchecked value="{{acceptedTerms}}" class="red">Accept terms and conditions</paper-radio-button><p>
+          <paper-button raised on-click="submitForm"><iron-icon icon="done"></iron-icon>Submit</paper-button>
+      </form>
     </div>
   </template>
 
   <script>
-    class BambinaiaAddNanny extends Polymer.Element {
-      static get is() { return 'bambinaia-add-nanny'; }
-    }
-
-    window.customElements.define(BambinaiaAddNanny.is, BambinaiaAddNanny);
+  Polymer({
+      is: "bambinaia-add-nanny",
+      submitForm: function() {
+          let newUser = {
+              name: {
+                  firstName: this.firstName,
+                  lastName: this.lastName,
+              },
+              address: {
+                  street: this.street,
+                  city: this.city,
+                  zip: this.zip
+              },
+              contact: {
+                  phoneNumber: this.phoneNumber,
+                  email: this.email
+              },
+              sex: this.radioSelected
+          }
+          if (this.acceptedTerms == 'on') {
+              console.log(newUser);
+          }
+      }
+  })
   </script>
 </dom-module>
