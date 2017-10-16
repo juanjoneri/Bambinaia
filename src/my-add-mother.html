@@ -43,7 +43,7 @@
               </paper-radio-group>
 
               <paper-input name="firstName" label="First Name" id="firstName"></paper-input>
-              <paper-input id="lastName" label="Last Name"></paper-input>
+              <paper-input name="lastName" label="Last Name" id="lastName"></paper-input>
 
               <paper-radio-button class="red">Accept terms and conditions</paper-radio-button><p>
               <paper-button raised on-click="submitForm"><iron-icon icon="done"></iron-icon>Submit</paper-button>
@@ -58,7 +58,11 @@
           Polymer({
               is: "my-add-mother",
               submitForm: function() {
-                  console.log(this.$.firstName.value);
+                  let newUser = {
+                      firstName: this.$.firstName.value,
+                      lastName: this.$.lastName.value
+                  }
+                  console.log(newUser);
               }
           })
       </script>
