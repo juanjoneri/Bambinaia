@@ -15,7 +15,7 @@ The website will be developed using Google's Polymer 2.0, a JavaScript library t
 ```bash
 cd Bambinaia/
 bower install
-polymer serve ---open
+polymer serve --open
 ```
 
 #### Add new components
