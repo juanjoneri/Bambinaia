@@ -1,2 +1,2 @@
 bower install
-\npolymer serve --open
+polymer serve --open
