@@ -10,15 +10,34 @@ The website will be developed using Google's Polymer 2.0, a JavaScript library t
 
 ### Download the Project
 
+#### Run the app locally
+
 ```bash
 cd Bambinaia/
 bower install
 polymer serve ---open
 ```
 
+#### Add new components
+
+https://www.polymer-project.org/1.0/start/toolbox/add-elements
+
+```bash
+bower install --save PolymerElements/paper-radio-button
+```
+
+#### Deploy using firebase
+
+https://www.polymer-project.org/1.0/start/toolbox/deploy
+
+```bash
+polymer build
+firebase deploy
+```
+
 ### Available live at
 
-[firebase.com](https://polymer-project3.firebaseapp.com/)
+[firebase.com](https://polymer-project3.firebaseapp.com/add-nanny)
 
 #### Add User  view
 
