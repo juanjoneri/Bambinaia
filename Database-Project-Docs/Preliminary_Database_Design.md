@@ -65,4 +65,4 @@ The following picture represnets our Entity-Relationship Diagram for Bambinaia's
 
 
 
-![Bambinaia_ERD](./screens/Bambinaia_ERD.png)
+![Bambinaia_ERD](../screens/Bambinaia_ERD.png)

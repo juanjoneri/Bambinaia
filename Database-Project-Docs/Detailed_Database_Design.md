@@ -4,9 +4,15 @@
 
 ###### Engine Used
 
+data storage and hosting will be done through Google's Firebase we API. The data is managed as JSON files and synced in real time on the connected client side.
+
 ###### Potential Users
 
+Our aim is to develop a website for matching parents with nannies. We know and value all the hard work that parents put into raising their children, but we understand as well that, as every human being, we all need some time off to focus on something else such as get work done, meeting an old friend or getting that deserved massage. Bambinaia allows parents to take some time off while having the ease of mind that their children are taken good care of. This app is perfect both for parents that need a nanny, as well as nannies that want to get some hands on experience with children, or that would like to spend their free time earning extra cash. We know all families are different, and that all parents have different preferences on the qualifications of their nannies, that's why Bambinaia helps them find the perfect nanny to match their needs.
+
 ###### Other Stuff
+
+The website will be developed using Google's Polymer 2.0, a JavaScript library that helps you create custom reusable HTML elements *(web components)*, and use them to build performant, maintainable apps. Authentication, data storage and hosting will be done through Google's Firebase. The data is managed as JSON files and allows real time changes to occur on the connected client side.
 
 ### Data Dictionary
 
@@ -45,4 +51,21 @@
 | Occupation          | Nannies full time occupation (i.e. Student at LMU) |
 | Availability        | Days and time of the week where nanny would be available to work |
 
+###### Log_Book
+
+| Column          | Data Type    | Description                              |
+| --------------- | ------------ | ---------------------------------------- |
+| Date            | TIMESTAMP    | Date when work started.                  |
+| Start           | TIME         | Start time, when nanny started working   |
+| End             | TIME         | End time, when nanny left the house      |
+| Number_Children | SMALLINT     | Number of children that the nanny had to take care of |
+| Parent_Review   | SMALLINT     | Number 1-5 describing the general satisfaction level of the parent with the nannie's job |
+| Nanny_Review    | SMALLINT     | Number 1-5 describing the general satisfaction level of the nanny with the children, house, and overall job. |
+| Parent_ID       | INT IDENTITY | Identifying attribute of the parent who requested the nanny. |
+| Nanny_ID        | INT IDENTITY | Identifying attribute for the nanny that was assigned the job. |
+
+
+
 ### Entity Relationship Diagram
+
+![Bambinaia_ERD.png](../screens/Bambinaia_ERD.png)
