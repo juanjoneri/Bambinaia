@@ -1,4 +1,4 @@
-# etailed Database Design
+# Detailed Database Design
 
 ## Description
 
@@ -35,7 +35,7 @@ The data to be stored will be divided in three different entities: Parent inform
 | Phone_Number   | VARCHAR(15)   | Mobile phone number for nannie to be able to contact. |
 | Email          | VARCHAR(30)   | Preferred email for all communication related to the app |
 | Address_Street | VARCHAR(20)   | Street of the house where the parent expects nannie to work |
-| Address_City   | VARCHAR(2100) | City where the parent needs the nannie (i.e. where the children live) |
+| Address_City   | VARCHAR(2100) | City where the parent needs the nanny (i.e. where the children live) |
 | Address_Zip    | INT           | zip code corresponding to the provided address (nannie relevance is ordered based on proximity to the parent) |
 
 ###### Example
