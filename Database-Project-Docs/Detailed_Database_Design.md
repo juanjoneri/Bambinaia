@@ -26,43 +26,48 @@ The data to be stored will be divided in three different entities: Parent inform
 
 ##### Parents
 
-| Column         |               | Description                              |
-| :------------- | ------------- | ---------------------------------------- |
-| Parent_ID      | INT IDENTITY  | Unique ID designated automatically by DBMS Firebase |
-| First_Name     | VARCHAR(12)   | First name given to the parent at birth (i.e. Ross) |
-| Last_Name      | VARCHAR(12)   | Last name (aka family name) of the parent (i.e Geller) |
-| Gender         | CHAR(1)       | Male, female or other                    |
-| Phone_Number   | VARCHAR(15)   | Mobile phone number for nannie to be able to contact. |
-| Email          | VARCHAR(30)   | Preferred email for all communication related to the app |
-| Address_Street | VARCHAR(20)   | Street of the house where the parent expects nannie to work |
-| Address_City   | VARCHAR(2100) | City where the parent needs the nanny (i.e. where the children live) |
-| Address_Zip    | INT           | zip code corresponding to the provided address (nannie relevance is ordered based on proximity to the parent) |
+| Column              |              | Description                              |
+| :------------------ | ------------ | ---------------------------------------- |
+| Parent_ID           | INT IDENTITY | Unique ID designated automatically by DBMS Firebase |
+| First_Name          | VARCHAR(12)  | First name given to the parent at birth (i.e. Ross) |
+| Last_Name           | VARCHAR(12)  | Last name (aka family name) of the parent (i.e Geller) |
+| Gender              | CHAR(1)      | Male, female or other                    |
+| Phone_Number        | VARCHAR(15)  | Mobile phone number for nannie to be able to contact. |
+| Email               | VARCHAR(30)  | Preferred email for all communication related to the app |
+| Address_Street      | VARCHAR(20)  | Street of the house where the parent expects nannie to work |
+| Address_City        | VARCHAR(20)  | City where the parent needs the nanny (i.e. where the children live) |
+| Address_Zip         | INT          | zip code corresponding to the provided address (nannie relevance is ordered based on proximity to the parent) |
+| General Description | VARCHAR(100) | Parent's description (number of kids etc.) |
+| Rating              | FLOAT        | Parent's rating                          |
 
 ###### Example
 
-| Parent ID   | First Name | Last Name | General Description | Rating | Age  | Street Address         | ZIP   | Phone       | Email               |
-| ----------- | ---------- | --------- | ------------------- | ------ | ---- | ---------------------- | ----- | ----------- | ------------------- |
-| 96964565773 | Maria      | Carrera   | I have two kids...  | 4.5    | 32   | 7270 W. Manchester AV. | 90045 | 12453151641 | m.carrera@gmail.com |
+| Parent ID   | First Name | Last Name | General Description | Rating | Age  | Street Address         | ZIP   | Phone       | Email               | Gender |
+| ----------- | ---------- | --------- | ------------------- | ------ | ---- | ---------------------- | ----- | ----------- | ------------------- | ------ |
+| 96964565773 | Maria      | Carrera   | I have two kids...  | 4.5    | 32   | 7270 W. Manchester AV. | 90045 | 12453151641 | m.carrera@gmail.com | F      |
 
 ##### Nannies
 
-| Column         | Data Type    | Description                              |
-| :------------- | ------------ | ---------------------------------------- |
-| Nanny_ID       | INT IDENTITY | Unique ID designated automatically by DBMS Firebase |
-| First_Name     | VARCHAR(12)  | First name of the nanny (i.e. Phoebe)    |
-| Last_Name      | VARCHAR(12)  | Last name of the nanny (i.e Buffay)      |
-| Gender         | CHAR(1)      | Male, female or other                    |
-| Age            | SMALLINT     | Time elapsed since birth rounded to nearest year |
-| Phone_Number   | VARCHAR(15)  | Mobile phone number for parent to be able to contact |
-| Email          | VARCHAR(30)  | Preferred email for all communication related to the app |
-| Address_Street | VARCHAR(20)  | Street of the house where he/she is most likelly to commute |
-| Address_City   | VARCHAR(10)  | City corresponding to the provided address |
+| Column              | Data Type    | Description                              |
+| :------------------ | ------------ | ---------------------------------------- |
+| Nanny_ID            | INT IDENTITY | Unique ID designated automatically by DBMS Firebase |
+| First_Name          | VARCHAR(12)  | First name of the nanny (i.e. Phoebe)    |
+| Last_Name           | VARCHAR(12)  | Last name of the nanny (i.e Buffay)      |
+| Gender              | CHAR(1)      | Male, female or other                    |
+| Age                 | SMALLINT     | Time elapsed since birth rounded to nearest year |
+| Phone_Number        | VARCHAR(15)  | Mobile phone number for parent to be able to contact |
+| Email               | VARCHAR(30)  | Preferred email for all communication related to the app |
+| Address_Street      | VARCHAR(20)  | Street of the house where he/she is most likelly to commute |
+| Address_City        | VARCHAR(10)  | City corresponding to the provided address |
+| Rating              | FLOAT        | Nanny's rating                           |
+| General Description | VARCHAR(100) | Nanny's general description              |
+| Availability        | OBJ          | Nanny's availability                     |
 
 ###### Example
 
-| Nanny ID   | First Name | Last Name | General Description           | Availability | Occupation                             | Rating | Age  | Street Address     | ZIP   | Phone      | Email                |
-| ---------- | ---------- | --------- | ----------------------------- | ------------ | -------------------------------------- | ------ | ---- | ------------------ | ----- | ---------- | -------------------- |
-| 9595866898 | Florencia  | Gomez     | Florencia speciality is in... | M W 4-10 pm  | Student at Loyola Marymount University | 4.5    | 19   | 1336 Imaginary St. | 94400 | 3531315131 | fgomez3@lion.lmu.edu |
+| Nanny ID   | First Name | Last Name | General Description           | Availability | Occupation                             | Rating | Age  | Street Address     | ZIP   | Phone      | Email                | Gender |
+| ---------- | ---------- | --------- | ----------------------------- | ------------ | -------------------------------------- | ------ | ---- | ------------------ | ----- | ---------- | -------------------- | ------ |
+| 9595866898 | Florencia  | Gomez     | Florencia speciality is in... | M W 4-10 pm  | Student at Loyola Marymount University | 4.5    | 19   | 1336 Imaginary St. | 94400 | 3531315131 | fgomez3@lion.lmu.edu | F      |
 
 ##### Log_Book
 
