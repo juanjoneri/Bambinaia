@@ -68,14 +68,19 @@
       <paper-button class="user-reserve">Reserve</paper-button>
     </div>
   </paper-card>
+  <paper-button raised on-click="submitForm"><iron-icon icon="done"></iron-icon>Submit</paper-button>
+
 
   </template>
-
   <script>
-    class BambinaiaFindNanny extends Polymer.Element {
-      static get is() { return 'bambinaia-find-nanny'; }
-    }
-
-    window.customElements.define(BambinaiaFindNanny.is, BambinaiaFindNanny);
+  Polymer({
+      is: "bambinaia-find-nanny",
+      submitForm: function() {
+          var firebaseUser = firebase.database().ref().child("-KzqtiSrqjNP6KdNqNVR");
+          firebaseUser.on('value', function(info) {
+              console.log(info.val());
+          });
+      }
+  })
   </script>
 </dom-module>
