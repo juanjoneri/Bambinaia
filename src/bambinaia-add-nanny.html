@@ -77,7 +77,7 @@
           }
           if (this.acceptedTerms == 'on') {
               var firebaseRef = firebase.database().ref();
-              firebaseRef.child("New user").set("default")
+              firebaseRef.push().set(newUser)
               console.log(newUser);
           }
       }
