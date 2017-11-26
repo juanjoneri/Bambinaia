@@ -76,6 +76,8 @@
               sex: this.radioSelected
           }
           if (this.acceptedTerms == 'on') {
+              var firebaseRef = firebase.database().ref();
+              firebaseRef.child("New user").set("default")
               console.log(newUser);
           }
       }
