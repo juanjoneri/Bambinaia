@@ -4,6 +4,8 @@
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-styles/paper-styles.html">
 
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/iron-icons/maps-icons.html">
 <link rel="import" href="../bower_components/iron-icons/communication-icons.html">
@@ -68,7 +70,6 @@
   </paper-card>
   <paper-button raised on-click="searchNanny"><iron-icon icon="done"></iron-icon>Submit</paper-button>
 
-
   </template>
   <script>
 
@@ -90,7 +91,6 @@
       }
 
       searchNanny() {
-          console.log(nanniesData);
           nanniesData.on('value', function(info) {
               let userKey = Object.keys(info.val())[1]
               currentNanny = info.val()[userKey];
