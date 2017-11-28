@@ -39,7 +39,7 @@
 
   <paper-card image='https://pbs.twimg.com/media/DG_Z58PXgAAWOt5.jpg'>
     <div class="card-content">
-      <div class="user-header">{{doThisOnce()}}
+      <div class="user-header">{{updateName("Juan Neri")}}
         <div class="user-location user-light">
           <iron-icon icon="maps:place"></iron-icon>
           <span>Venice Beach</span>
@@ -71,18 +71,31 @@
 
   </template>
   <script>
-  Polymer({
-      is: "bambinaia-find-nanny",
-      doThisOnce: function() {
-        return Math.random();
-    },
-      submitForm: function() {
-          var firebaseUser = firebase.database().ref().child("Nannies");
-          console.log(this.name);
-          firebaseUser.on('value', function(info) {
-              console.log(info.val());
-          });
+
+  class BambinaiaFindNanny extends Polymer.Element {
+      static get is() {return 'bambinaia-find-nanny'}
+      static get properties() {
+        return {
+          user: Object
+        }
       }
-  })
+      updateName(d) {
+          return 'Nany'
+      }
+      submitForm() {
+          console.log('update name');
+          this.updateName("salmon")
+      }
+    }
+
+    customElements.define(BambinaiaFindNanny.is, BambinaiaFindNanny);
+
+  let nanniesData = firebase.database().ref().child("Nannies");
+  let currentNanny;
+  nanniesData.on('value', function(info) {
+      userKey = Object.keys(info.val())[0]
+      currentNanny = info.val()[userKey];
+      console.log(currentNanny);
+  });
   </script>
 </dom-module>
