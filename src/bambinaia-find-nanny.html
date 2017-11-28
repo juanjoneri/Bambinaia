@@ -39,10 +39,10 @@
 
   <paper-card image='https://pbs.twimg.com/media/DG_Z58PXgAAWOt5.jpg'>
     <div class="card-content">
-      <div class="user-header">{{user}}
+      <div class="user-header">{{user.name.firstName}} {{user.name.lastName}}
         <div class="user-location user-light">
           <iron-icon icon="maps:place"></iron-icon>
-          <span>Venice Beach</span>
+          <span>{{user.address.city}}</span>
         </div>
       </div>
       <div class="user-rating">
@@ -73,34 +73,34 @@
   <script>
 
   let nanniesData = firebase.database().ref().child("Nannies");
+  let currentNanny;
 
   class BambinaiaFindNanny extends Polymer.Element {
       static get is() {return 'bambinaia-find-nanny'}
 
       static get properties() {
         return {
-          user: String
+          user: {
+              name: {
+                  firstName: "Natalia",
+                  lastName: "Dibbern"
+              }
+          }
         }
       }
 
       searchNanny() {
           console.log(nanniesData);
           nanniesData.on('value', function(info) {
-              let userKey = Object.keys(info.val())[0]
-              let currentNanny = info.val()[userKey];
+              let userKey = Object.keys(info.val())[1]
+              currentNanny = info.val()[userKey];
           });
-          this.user = currentNanny.name.firstName
+          setTimeout(() => this.user = currentNanny, 500);
+
       }
     }
 
     customElements.define(BambinaiaFindNanny.is, BambinaiaFindNanny);
 
-
-  let currentNanny;
-  nanniesData.on('value', function(info) {
-      userKey = Object.keys(info.val())[0]
-      currentNanny = info.val()[userKey];
-      console.log(currentNanny);
-  });
   </script>
 </dom-module>
