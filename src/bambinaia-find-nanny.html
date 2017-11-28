@@ -25,6 +25,10 @@
       padding: 16px;
     }
 
+    paper-card {
+        width: 400px;
+    }
+
     .user-header { @apply --paper-font-headline; }
     .user-light { color: var(--paper-grey-600); }
     .user-location {
@@ -39,12 +43,13 @@
       color: var(--paper-amber-500);
     }
     iron-icon.star:last-of-type { color: var(--paper-grey-500); }
+
   </style>
 
   <div hidden$="{{hide}}">
 
   <paper-card image$="{{image}}">
-    <div class="card-content" >
+    <div class="card-content">
       <div class="user-header">{{user.name.firstName}} {{user.name.lastName}}
         <div class="user-location user-light">
           <iron-icon icon="maps:place"></iron-icon>
