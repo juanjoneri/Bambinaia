@@ -34,16 +34,32 @@
 
           <form is="iron-form" id="form" method="post">
 
-              <h1>Register new account</h1>
+              <h1>Register as a Parent</h1>
 
-              <paper-input value="{{firstName}}" name="firstName" label="First Name"></paper-input>
-              <paper-input value="{{lastName}}" name="lastName" label="Last Name"></paper-input>
+              <h3>Name</h3>
+              <paper-input value="{{firstName}}" label="First Name"></paper-input>
+              <paper-input value="{{lastName}}" label="Last Name"></paper-input>
 
+              <h3>Gender</h3>
               <paper-radio-group selected="{{radioSelected}}" aria-labelledby="sex" name="sex">
-                <paper-radio-button name="M">Male</paper-radio-button>
-                <paper-radio-button name="F">Female</paper-radio-button>
-                <paper-radio-button name="O">Other</paper-radio-button>
+                  <paper-radio-button name="M">Male</paper-radio-button>
+                  <paper-radio-button name="F">Female</paper-radio-button>
+                  <paper-radio-button checked name="O">Other</paper-radio-button>
               </paper-radio-group>
+
+              <h3>Contact Information</h3>
+              <paper-input type="number" value="{{phoneNumber}}" label="Phone Number"></paper-input>
+              <paper-input value="{{email}}" label="Email"></paper-input>
+
+              <h3>Address</h3>
+              <paper-input value="{{street}}" label="Street"></paper-input>
+              <paper-input value="{{city}}" label="City"></paper-input>
+              <paper-input type="number" value="{{zip}}" label="Zip code" maxlength="5"></paper-input>
+
+              <h3>General Description</h3>
+              <paper-input value="{{description}}"></paper-input>
+
+              <br>
 
               <paper-radio-button unchecked value="{{acceptedTerms}}" class="red">Accept terms and conditions</paper-radio-button><p>
               <paper-button raised on-click="submitForm"><iron-icon icon="done"></iron-icon>Submit</paper-button>
@@ -59,11 +75,27 @@
               is: "bambinaia-add-mother",
               submitForm: function() {
                   let newUser = {
-                      firstName: this.firstName,
-                      lastName: this.lastName,
-                      sex: this.radioSelected
+                      name: {
+                          firstName: this.firstName,
+                          lastName: this.lastName,
+                      },
+                      address: {
+                          street: this.street,
+                          city: this.city,
+                          zip: this.zip
+                      },
+                      contact: {
+                          phoneNumber: this.phoneNumber,
+                          email: this.email
+                      },
+                      generalDescription: this.description,
+                      sex: this.radioSelected,
+                      rating: 0
                   }
                   if (this.acceptedTerms == 'on') {
+                      var firebaseRef = firebase.database().ref();
+                      firebaseRef.child("Parents").push().set(newUser)
+                      console.log('New User Added')
                       console.log(newUser);
                   }
               }
