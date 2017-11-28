@@ -39,8 +39,10 @@
     iron-icon.star:last-of-type { color: var(--paper-grey-500); }
   </style>
 
+  <div hidden$="{{hide}}">
+
   <paper-card image$="{{image}}">
-    <div class="card-content">
+    <div class="card-content" >
       <div class="user-header">{{user.name.firstName}} {{user.name.lastName}}
         <div class="user-location user-light">
           <iron-icon icon="maps:place"></iron-icon>
@@ -66,6 +68,8 @@
       <paper-button class="user-reserve">Reserve</paper-button>
     </div>
   </paper-card>
+
+    </div>
   <paper-button raised on-click="searchNanny"><iron-icon icon="done"></iron-icon>Submit</paper-button>
 
   </template>
@@ -90,6 +94,10 @@
 
       static get properties() {
         return {
+            hide: {
+                    type: Boolean,
+                    value: true
+                }
         }
       }
 
@@ -111,6 +119,7 @@
               else
                 currentImage = `../images/Male/random-user_imageM${index}.jpg`
               this.image = currentImage;
+              this.hide = false;
           }, 500);
 
       }
