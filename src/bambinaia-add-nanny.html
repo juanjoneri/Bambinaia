@@ -26,7 +26,7 @@
 
     <div class="card">
       <form is="iron-form" id="form" method="post">
-          <h1>Register new account</h1>
+          <h1>Register as a Nanny</h1>
 
           <h3>Name</h3>
           <paper-input value="{{firstName}}" label="First Name"></paper-input>
@@ -46,8 +46,12 @@
           <h3>Address</h3>
           <paper-input value="{{street}}" label="Street"></paper-input>
           <paper-input value="{{city}}" label="City"></paper-input>
-          <paper-input value="{{zip}}" label="Zip code"></paper-input>
+          <paper-input type="number" value="{{zip}}" label="Zip code" maxlength="5"></paper-input>
 
+          <h3>General Description</h3>
+          <paper-input value="{{description}}"></paper-input>
+
+          <br>
 
           <paper-radio-button unchecked value="{{acceptedTerms}}" class="red">Accept terms and conditions</paper-radio-button><p>
           <paper-button raised on-click="submitForm"><iron-icon icon="done"></iron-icon>Submit</paper-button>
@@ -73,11 +77,14 @@
                   phoneNumber: this.phoneNumber,
                   email: this.email
               },
-              sex: this.radioSelected
+              generalDescription: this.description,
+              sex: this.radioSelected,
+              rating: 0
           }
           if (this.acceptedTerms == 'on') {
               var firebaseRef = firebase.database().ref();
-              firebaseRef.push().set(newUser)
+              firebaseRef.child("Nannies").push().set(newUser)
+              console.log('New User Added')
               console.log(newUser);
           }
       }
