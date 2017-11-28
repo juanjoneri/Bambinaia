@@ -3,7 +3,6 @@
 <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-styles/paper-styles.html">
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/iron-icons/maps-icons.html">
@@ -13,7 +12,6 @@
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 
-<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 
 <dom-module id="bambinaia-find-nanny">
   <template>
@@ -41,7 +39,7 @@
 
   <paper-card image='https://pbs.twimg.com/media/DG_Z58PXgAAWOt5.jpg'>
     <div class="card-content">
-      <div class="user-header">Natalia Dibbern
+      <div class="user-header">{{doThisOnce()}}
         <div class="user-location user-light">
           <iron-icon icon="maps:place"></iron-icon>
           <span>Venice Beach</span>
@@ -75,8 +73,12 @@
   <script>
   Polymer({
       is: "bambinaia-find-nanny",
+      doThisOnce: function() {
+        return Math.random();
+    },
       submitForm: function() {
-          var firebaseUser = firebase.database().ref().child("-KzqtiSrqjNP6KdNqNVR");
+          var firebaseUser = firebase.database().ref().child("Nannies");
+          console.log(this.name);
           firebaseUser.on('value', function(info) {
               console.log(info.val());
           });
