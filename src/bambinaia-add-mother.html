@@ -88,9 +88,11 @@
                           phoneNumber: this.phoneNumber,
                           email: this.email
                       },
-                      generalDescription: this.description,
-                      sex: this.radioSelected,
-                      rating: 0
+                      general: {
+                          description: this.description,
+                          sex: this.radioSelected,
+                          rating: 0
+                      }
                   }
                   if (this.acceptedTerms == 'on') {
                       var firebaseRef = firebase.database().ref();
