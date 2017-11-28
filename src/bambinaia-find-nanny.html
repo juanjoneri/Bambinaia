@@ -66,11 +66,13 @@
       <paper-button class="user-reserve">Reserve</paper-button>
     </div>
   </paper-card>
-  <paper-button raised on-click="submitForm"><iron-icon icon="done"></iron-icon>Submit</paper-button>
+  <paper-button raised on-click="searchNanny"><iron-icon icon="done"></iron-icon>Submit</paper-button>
 
 
   </template>
   <script>
+
+  let nanniesData = firebase.database().ref().child("Nannies");
 
   class BambinaiaFindNanny extends Polymer.Element {
       static get is() {return 'bambinaia-find-nanny'}
@@ -81,19 +83,19 @@
         }
       }
 
-      updateName(d) {
-          this.user = d
-      }
-
-      submitForm() {
-          console.log('update name');
-          this.updateName("salmon")
+      searchNanny() {
+          console.log(nanniesData);
+          nanniesData.on('value', function(info) {
+              let userKey = Object.keys(info.val())[0]
+              let currentNanny = info.val()[userKey];
+          });
+          this.user = currentNanny.name.firstName
       }
     }
 
     customElements.define(BambinaiaFindNanny.is, BambinaiaFindNanny);
 
-  let nanniesData = firebase.database().ref().child("Nannies");
+
   let currentNanny;
   nanniesData.on('value', function(info) {
       userKey = Object.keys(info.val())[0]
