@@ -115,18 +115,18 @@
       }
 
       searchNanny() {
-          let index = this.index ? this.index : parseInt(Math.random()*9);
+          let index = this.index ? this.index : parseInt(Math.random()*11);
           nanniesData.on('value', function(info) {
               let userKey = Object.keys(info.val())[index]
               currentNanny = info.val()[userKey];
           });
           setTimeout(() => {
               this.user = currentNanny;
-              console.log(this.user.general.sex);
+
               if(this.user.general.sex == 'F')
-                currentImage = `../images/Female/random-user_imageF${index}.jpg`
+                currentImage = `../images/Female/random-user_imageF${index % 9}.jpg`
               else
-                currentImage = `../images/Male/random-user_imageM${index}.jpg`
+                currentImage = `../images/Male/random-user_imageM${index % 9}.jpg`
               this.image = currentImage;
               this.hide = false;
           }, 500);
