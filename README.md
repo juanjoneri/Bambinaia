@@ -19,7 +19,7 @@ polymer serve --open
 
 #### Add new components
 
-https://www.polymer-project.org/1.0/start/toolbox/add-elements
+https://www.polymer-project.org/2.0/start/toolbox/add-elements
 
 ```bash
 bower install --save PolymerElements/paper-radio-button
@@ -27,7 +27,7 @@ bower install --save PolymerElements/paper-radio-button
 
 #### Deploy using firebase
 
-https://www.polymer-project.org/1.0/start/toolbox/deploy
+https://www.polymer-project.org/2.0/start/toolbox/deploy
 
 ```bash
 polymer build
@@ -36,7 +36,7 @@ firebase deploy
 
 ### Available live at
 
-[firebase.com](https://polymer-project3.firebaseapp.com/add-nanny)
+[bambinaia.com](https://bambinaia-app.firebaseapp.com)
 
 #### Add User  view
 
