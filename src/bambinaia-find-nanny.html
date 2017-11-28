@@ -39,7 +39,7 @@
 
   <paper-card image='https://pbs.twimg.com/media/DG_Z58PXgAAWOt5.jpg'>
     <div class="card-content">
-      <div class="user-header">{{updateName("Juan Neri")}}
+      <div class="user-header">{{user}}
         <div class="user-location user-light">
           <iron-icon icon="maps:place"></iron-icon>
           <span>Venice Beach</span>
@@ -74,14 +74,17 @@
 
   class BambinaiaFindNanny extends Polymer.Element {
       static get is() {return 'bambinaia-find-nanny'}
+
       static get properties() {
         return {
-          user: Object
+          user: String
         }
       }
+
       updateName(d) {
-          return 'Nany'
+          this.user = d
       }
+
       submitForm() {
           console.log('update name');
           this.updateName("salmon")
