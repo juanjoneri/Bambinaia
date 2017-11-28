@@ -39,7 +39,7 @@
     iron-icon.star:last-of-type { color: var(--paper-grey-500); }
   </style>
 
-  <paper-card image='../images/Female/random-user_imageF1.jpg'>
+  <paper-card image$="{{image}}">
     <div class="card-content">
       <div class="user-header">{{user.name.firstName}} {{user.name.lastName}}
         <div class="user-location user-light">
@@ -89,12 +89,6 @@
 
       static get properties() {
         return {
-          user: {
-              name: {
-                  firstName: "Natalia",
-                  lastName: "Dibbern"
-              }
-          }
         }
       }
 
@@ -107,7 +101,10 @@
               let userKey = Object.keys(info.val())[1]
               currentNanny = info.val()[userKey];
           });
-          setTimeout(() => this.user = currentNanny, 500);
+          setTimeout(() => {
+              this.user = currentNanny
+              this.image = '../images/Female/random-user_imageF1.jpg'
+          }, 500);
 
       }
     }
