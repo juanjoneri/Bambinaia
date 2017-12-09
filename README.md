@@ -34,9 +34,7 @@ polymer build
 firebase deploy
 ```
 
-### Available live at
-
-[bambinaia.com](https://bambinaia-app.firebaseapp.com)
+### Available live at [www.bambinaia.com](https://bambinaia-app.firebaseapp.com)
 
 
 <table style="width:100%;">
