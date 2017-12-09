@@ -50,13 +50,6 @@ firebase deploy
 
 ![iphone8-clay-perspective](Screen/iphone8-clay-perspective.png)
 
-## Application Description
-**Bambinaia** is an app for matching parents with nannies on demand. Just like Uber, Airbnb or Instacart, parents should be able to request a high quality nanny for their children on a short notice. More on the vision for the **utility** of this app can be found in the github repo [juanjoneri/bambinaia](https://github.com/juanjoneri/Bambinaia).
-
-The front end and **usability** of this app has not yet been a priority, however in this *Dream Design* document, the vision for the user experience of the service will be showcased in detail, with examples and wireframes. Since it is the case that the UI has not yet been implemented, this project will propose a design rather than a redesign, of what it should look like in the light of the interaction design principles discussed thorough the semester.
-
-This project will focus on mobile interaction, and the wireframes will be showcased in an iPhone device. However the ideas are platform independent, and are only restricted to hand-held, touch-enabled devices such as small Android Tablets, windows Phones, and iPhones among others.
-
 
 ### Web Services Used
 The use cases presented in this project rely primarily on calls to the database. The database is composed of two tables, that hold information for Nannies and Parents. The information retrieved, in the form of a JSON object from the database will be used to populate the interface presented to the users. Since the database for Bambinaia is stored and maintained using Googles firebase, the front end will rely on queries specified in the Doc for web at [firebase.google.com/docs](https://firebase.google.com/docs/reference/js/firebase.database.Query) in the server side. The client side will interact with this database using API calls that depend on location and time. Following is an example of a query run using python for searching all nannies in a radius from coordinates, that are available to work at a specific time:
