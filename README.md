@@ -38,13 +38,23 @@ firebase deploy
 
 [bambinaia.com](https://bambinaia-app.firebaseapp.com)
 
-#### Add User  view
 
-#### ![adduser](https://github.com/juanjoneri/LMU-CMSI486-Fall17/blob/master/screens/adduser.png)
-
-### Retreive User view
-
-![retreiveuser](https://github.com/juanjoneri/LMU-CMSI486-Fall17/blob/master/screens/usercard.png)
+<table style="width:100%;">
+	<tr>
+		<th>Add User view</th>
+		<th>Retreive User view</th>
+	</tr>
+	<tr>
+		<td>
+			<img src="https://github.com/juanjoneri/LMU-CMSI486-Fall17/blob/master/screens/adduser.png"
+				width="500" />
+		</td>
+		<td>
+			<img src="https://github.com/juanjoneri/LMU-CMSI486-Fall17/blob/master/screens/usercard.png"
+				width="500" />
+		</td>
+	</tr>
+</table>
 
 # Dream Design for Bambinaia UX
 
